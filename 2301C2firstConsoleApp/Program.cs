@@ -302,23 +302,23 @@ int[,,] data =
         { 60,50},{ 30,70}
     }
 };
-*/
+
 string[,] groups =
 {
     {
-        "Fazal",
-        "Afzal"
+        "Fazal",//[0,0]
+        "Afzal"//[0,1]
     },
     {
         "Yahya", 
         "umer" 
     },
     {
-        "Waleed", 
-        "Zeeshan" 
+        "Waleed",
+        "Zeeshan" //[2,1]
     }
 };
-
+ 3 X 2
 //Console.WriteLine(groups[2,1]);
 //nested loop
 
@@ -343,4 +343,86 @@ Console.WriteLine("Hello {1} {2} {0}",fname,mname,lname);
 
 //Jagged Array
 
+string[][] skillset =
+{
+     new string[2]{"PHP", "MySql"},
+     new string[4]{"PHP", "MySql", "NextJs", "Python"},
+     new string[1]{"Batain Banana"},
+     new string[3]{"C#", "SQL SERVER", "Typescript"},
 
+};
+
+
+
+foreach (var item in skillset)
+{
+    foreach (var item1 in item)
+    {
+        Console.WriteLine(item1);
+        
+    }
+    Console.WriteLine();
+}
+;
+
+
+
+//Functions
+//Pre defined 
+//Math.Cos(90);
+//Math.Sqrt(49);//7
+
+//User defined
+
+void sqWithSqrt()
+{
+    int number = 49;
+    int square = number * number;
+    Console.WriteLine($"Square of {number} is : {square}");
+    Console.WriteLine($"Square Root of {number} is : {Math.Sqrt(number)}");
+}
+
+sqWithSqrt();
+
+//1. No  Return with no Parameters
+//Function Definition
+void Greet()
+{
+    Console.WriteLine("Salam, Jumma Mubarak");
+}
+//Calling a function
+Greet();
+
+//2.  Return with no Parameters
+string Greet()
+{
+   return ("Salam, Jumma Mubarak");
+}
+//Calling a function
+
+string msg = Greet();
+Console.WriteLine(msg);
+
+
+Console.WriteLine(Greet());
+
+//3. No  Return with Parameters
+void Greet(string name)//parameter
+{
+    Console.WriteLine($"Salam {name}, Jumma Mubarak");
+}
+//Calling a function
+Greet("Haris");// argument
+*/
+string Greet(string name,int age)
+{
+    return ($"Hi {name}, your age is {age}.We Warmly welcome you.");
+}
+//Calling a function
+
+string msg = Greet("Haris",45);
+Console.WriteLine(msg);
+
+
+
+//4. Return with Parameters
