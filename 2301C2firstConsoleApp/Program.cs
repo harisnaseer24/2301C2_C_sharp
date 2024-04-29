@@ -413,7 +413,8 @@ void Greet(string name)//parameter
 }
 //Calling a function
 Greet("Haris");// argument
-*/
+
+//4. Return with Parameters
 string Greet(string name,int age)
 {
     return ($"Hi {name}, your age is {age}.We Warmly welcome you.");
@@ -423,6 +424,74 @@ string Greet(string name,int age)
 string msg = Greet("Haris",45);
 Console.WriteLine(msg);
 
+//Percentage Calculator
+
+// (obt/total)*100
+
+//Exception Handling 
+//try | catch
+
+try
+{
+    int age = Convert.ToInt32(Console.ReadLine());
+    if(age >= 60)
+    {
+        Console.WriteLine("You should Rest now");
+    }
+    else
+    {
+        Console.WriteLine("Keep doing hard work.");
+    }
+
+}
+catch (FormatException)
+{
+    Console.WriteLine("Please enter numeric value for age");
+}
+*/
 
 
-//4. Return with Parameters
+//Collections
+
+//Generics -- (Dynamic Size) List + Additional Methods
+//Non Generics -- (Fixed Size) Arrays
+
+
+
+//List
+
+List<string> Mobiles = new List<string>();
+
+Mobiles.Add("Samsung S24");
+Mobiles.Add("Oppo F11");
+Mobiles.Add("Redmi Note 14");
+Mobiles.Add("Apple Iphone 15 pro");
+Mobiles.Add("Nokia 3310");
+Mobiles.Add("Google Pixel 8pro");
+Console.WriteLine(Mobiles[4]);
+Mobiles.Remove("Nokia 3310");
+
+Console.WriteLine("Displaying Cellphones");
+Mobiles.Insert(4, "Realme Gt");
+
+
+foreach (var item in Mobiles)
+{
+    Console.WriteLine(item);
+}
+
+Console.WriteLine(Mobiles.Count());
+Console.WriteLine(Mobiles.Contains("Nokia 3310"));//true /false
+
+Mobiles.Clear(); //Empty list
+
+
+//Create a List. Get input for list items from user. If user types "no",
+//you have to print all items in the list.
+
+
+
+
+
+
+
