@@ -1,5 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
+﻿
 //Console.WriteLine("Hello, Haris!");
 
 //DATATYPES
@@ -253,7 +252,7 @@ for (int j=0; j < evenNumbers.Length; j++)
 //Validation  for even numbers  63 -> 64
 
 */
-int[] evenNumbers = { 2, 14, 22, 8, 2 };
+//int[] evenNumbers = { 2, 14, 22, 8, 2 };
 //{2, 8 ,22, 14, 2 }
 /*Array.Sort(evenNumbers);//ascending order
 
@@ -448,7 +447,7 @@ catch (FormatException)
 {
     Console.WriteLine("Please enter numeric value for age");
 }
-*/
+
 
 
 //Collections
@@ -459,7 +458,7 @@ catch (FormatException)
 
 
 //List
-
+//Generic Collection
 List<string> Mobiles = new List<string>();
 
 Mobiles.Add("Samsung S24");
@@ -489,8 +488,126 @@ Mobiles.Clear(); //Empty list
 //Create a List. Get input for list items from user. If user types "no",
 //you have to print all items in the list.
 
+*/
+// 
+
+//Generic Collection (Datatype is defined)
+//Queue
+//fifo -- First in first out
+using System.Collections;
+
+//Queue<string> names = new Queue<string>();
+//names.Enqueue("Haris");
+//names.Enqueue("Jameel");
+//names.Enqueue("Shariq");
+//names.Enqueue("Qasim");
+//names.Enqueue("Waleed");
+//names.Enqueue("Owais");
+
+//names.Dequeue();
+//names.Dequeue();
+//names.Dequeue();
+
+//foreach (string item in names)
+//{
+//    Console.WriteLine(item);
+//}
 
 
+//Stack
+//lifo -- Last in first out
+
+//Stack<string> names = new Stack<string>();
+//names.Push("Haris");
+//names.Push("Jameel");
+//names.Push("Shariq");
+//names.Push("Qasim");
+//names.Push("Waleed");
+//names.Push("Owais");
+
+//names.Pop();
+//names.Pop();
+//names.Pop();
+//names.Pop();
+
+
+//foreach (string item in names)
+//{
+//    Console.WriteLine(item);
+//}
+
+
+//Non - generic (Any type can become an element. As a object)
+//ArrayList
+ArrayList address = new ArrayList();
+address.Add("Gulistan e johar");
+address.Add("Block 16");
+address.Add("Street 2");
+address.Add("R 834");
+
+
+ArrayList person = new ArrayList();
+person.Add("Mr. Zeldon");
+person.Add(28);
+person.Add(3124545457845);
+person.Add("CEO");
+person.Add("BSCS");
+person.Add("Karachi");
+//person.Remove(28);
+//person.RemoveAt(0);
+//person.RemoveRange(0,2);
+
+person.AddRange(address);
+bool isMSCS= person.Contains("MSCS");
+//person.Clear();
+
+
+
+//Console.WriteLine(person[2]);
+//foreach (var property in person)
+//{
+//    Console.WriteLine(property);
+//}
+
+Console.WriteLine(isMSCS);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Create an Array List for Mobile specifications. Take input from user and save the features in your arraylist.
+//As User types ok in input you have to display a thanks msg with all specifications.
 
 
 
