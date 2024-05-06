@@ -494,7 +494,7 @@ Mobiles.Clear(); //Empty list
 //Generic Collection (Datatype is defined)
 //Queue
 //fifo -- First in first out
-using System.Collections;
+
 
 //Queue<string> names = new Queue<string>();
 //names.Enqueue("Haris");
@@ -539,76 +539,87 @@ using System.Collections;
 
 //Non - generic (Any type can become an element. As a object)
 //ArrayList
-ArrayList address = new ArrayList();
-address.Add("Gulistan e johar");
-address.Add("Block 16");
-address.Add("Street 2");
-address.Add("R 834");
+//using System.Collections;
+//ArrayList address = new ArrayList();
+//address.Add("Gulistan e johar");
+//address.Add("Block 16");
+//address.Add("Street 2");
+//address.Add("R 834");
 
 
-ArrayList person = new ArrayList();
-person.Add("Mr. Zeldon");
-person.Add(28);
-person.Add(3124545457845);
-person.Add("CEO");
-person.Add("BSCS");
-person.Add("Karachi");
+//ArrayList person = new ArrayList();
+//person.Add("Mr. Zeldon");
+//person.Add(28);
+//person.Add(3124545457845);
+//person.Add("CEO");
+//person.Add("BSCS");
+//person.Add("Karachi");
 //person.Remove(28);
 //person.RemoveAt(0);
 //person.RemoveRange(0,2);
 
-person.AddRange(address);
-bool isMSCS= person.Contains("MSCS");
+//person.AddRange(address);
+//bool isMSCS= person.Contains("MSCS");
 //person.Clear();
-
-
-
 //Console.WriteLine(person[2]);
 //foreach (var property in person)
 //{
 //    Console.WriteLine(property);
 //}
-
-Console.WriteLine(isMSCS);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Console.WriteLine(isMSCS);
 
 //Create an Array List for Mobile specifications. Take input from user and save the features in your arraylist.
 //As User types ok in input you have to display a thanks msg with all specifications.
 
 
+//Dictionary (Generics) (key : value)
+
+using System.Collections;
+
+Dictionary<string, string> Accesories = new Dictionary<string, string>();
+
+Accesories.Add("product 1","Fast Charging Cable");
+Accesories.Add("product 2","Fast Charger");
+Accesories.Add("product 3","Handsfree");
+Accesories.Add("product 4","AirPods");
+Accesories.Add("product 5","AirDots");
+Accesories.Add("product 6","Smart Watch");
+//Accesories.Add();
+Accesories.Remove("product 5");
 
 
+Console.WriteLine(Accesories.ContainsValue("Smart Watch"));
+
+//for (int i = 1; i <=6; i++)
+//{
+//    Console.WriteLine(Accesories["product "+i]);
+//}
+
+foreach (var item in Accesories)
+{
+
+   string[] test= (item.ToString()).Split(",");// returns an array\
+    string key = test[0].Trim('[');// product 1
+    string value = test[1].Trim(']'); 
+
+    Console.WriteLine("This is key : {0} and this is value : {1}",key, value);
+   
+
+}
+
+//Hashtable (Non-Generics) (key : value)// Searching()
+
+Hashtable Singers = new Hashtable();// Calling constructor of Hashtable class for creating its object
+Singers.Add("top 1","Arijit");
+Singers.Add(2,"Atif");
+Singers.Add(3.0,"Rahat fateh");
+Singers.Add(false,123);
+
+Console.WriteLine(Singers[3.0]);
+
+foreach (DictionaryEntry item in Singers)
+{
+    Console.WriteLine(item.Key+":"+ item.Value);
+}
+
+Console.WriteLine(Singers.GetHashCode());
