@@ -574,52 +574,115 @@ Mobiles.Clear(); //Empty list
 
 //Dictionary (Generics) (key : value)
 
-using System.Collections;
+//using System.Collections;
 
-Dictionary<string, string> Accesories = new Dictionary<string, string>();
+//Dictionary<string, string> Accesories = new Dictionary<string, string>();
 
-Accesories.Add("product 1","Fast Charging Cable");
-Accesories.Add("product 2","Fast Charger");
-Accesories.Add("product 3","Handsfree");
-Accesories.Add("product 4","AirPods");
-Accesories.Add("product 5","AirDots");
-Accesories.Add("product 6","Smart Watch");
-//Accesories.Add();
-Accesories.Remove("product 5");
+//Accesories.Add("product 1","Fast Charging Cable");
+//Accesories.Add("product 2","Fast Charger");
+//Accesories.Add("product 3","Handsfree");
+//Accesories.Add("product 4","AirPods");
+//Accesories.Add("product 5","AirDots");
+//Accesories.Add("product 6","Smart Watch");
+////Accesories.Add();
+//Accesories.Remove("product 5");
 
 
-Console.WriteLine(Accesories.ContainsValue("Smart Watch"));
+//Console.WriteLine(Accesories.ContainsValue("Smart Watch"));
 
 //for (int i = 1; i <=6; i++)
 //{
 //    Console.WriteLine(Accesories["product "+i]);
 //}
 
-foreach (var item in Accesories)
-{
+//foreach (var item in Accesories)
+//{
 
-   string[] test= (item.ToString()).Split(",");// returns an array\
-    string key = test[0].Trim('[');// product 1
-    string value = test[1].Trim(']'); 
+//   string[] test= (item.ToString()).Split(",");// returns an array\
+//    string key = test[0].Trim('[');// product 1
+//    string value = test[1].Trim(']'); 
 
-    Console.WriteLine("This is key : {0} and this is value : {1}",key, value);
-   
+//    Console.WriteLine("This is key : {0} and this is value : {1}",key, value);
 
-}
+
+//}
 
 //Hashtable (Non-Generics) (key : value)// Searching()
 
-Hashtable Singers = new Hashtable();// Calling constructor of Hashtable class for creating its object
-Singers.Add("top 1","Arijit");
-Singers.Add(2,"Atif");
-Singers.Add(3.0,"Rahat fateh");
-Singers.Add(false,123);
+//Hashtable Singers = new Hashtable();// Calling constructor of Hashtable class for creating its object
+//Singers.Add("top 1","Arijit");
+//Singers.Add(2,"Atif");
+//Singers.Add(3.0,"Rahat fateh");
+//Singers.Add(false,123);
 
-Console.WriteLine(Singers[3.0]);
+//Console.WriteLine(Singers[3.0]);
 
-foreach (DictionaryEntry item in Singers)
+//foreach (DictionaryEntry item in Singers)
+//{
+//    Console.WriteLine(item.Key+":"+ item.Value);
+//}
+
+//Console.WriteLine(Singers.GetHashCode());
+
+
+//String Methods
+//string test = "we-aRE-Learn-i-ng-C#";
+//Console.WriteLine(test.Replace("Learning", "Mastering"));
+//Console.WriteLine(test.ToLower());
+//Console.WriteLine(test.ToUpper());
+
+//string[] abc = test.Split("-");
+//foreach (string item in abc)
+//{
+//    Console.WriteLine(item);
+
+
+//}
+//Console.WriteLine(test.Trim('-'));
+
+//Classes & Objects
+
+
+
+Person abc = new Person();
+Console.WriteLine(abc.PName);
+
+abc.PName = "Farooq";
+abc.CellNo = "+92 315655656";
+abc.Address = "h no 123, block a, stree 1, karachi.";
+abc.age = 24;
+Console.WriteLine(abc.PName);
+Console.WriteLine(abc.CellNo);
+Console.WriteLine(abc.Address);
+Console.WriteLine(abc.age);
+
+
+Person haris = new Person("Haris","+92 3172021951","hfkjdshf sjdkfk",45);
+Console.WriteLine(haris.PName);
+Console.WriteLine(haris.CellNo);
+Console.WriteLine(haris.Address);
+Console.WriteLine(haris.age);
+
+class Person
 {
-    Console.WriteLine(item.Key+":"+ item.Value);
+    public string PName, CellNo, Address;
+    public int age;
+
+    public Person()
+    {
+        this.PName = "Anonymous";
+        this.CellNo = "Anonymous";
+        this.Address = "Unknown";
+        this.age = 100;
+    }
+    public Person(string name, string no, string add, int age)
+    {
+        this.PName = name;
+        this.CellNo = no;
+        this.Address = add;
+        this.age = age;
+    }
+
+
 }
 
-Console.WriteLine(Singers.GetHashCode());
