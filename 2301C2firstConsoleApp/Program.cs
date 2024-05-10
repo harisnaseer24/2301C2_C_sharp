@@ -642,47 +642,135 @@ Mobiles.Clear(); //Empty list
 
 //Classes & Objects
 
+//Person abc = new Person();
+//Console.WriteLine(abc.PName);
+
+//abc.PName = "Farooq";
+//abc.CellNo = "+92 315655656";
+//abc.Address = "h no 123, block a, stree 1, karachi.";
+//abc.age = 24;
+//Console.WriteLine(abc.PName);
+//Console.WriteLine(abc.CellNo);
+//Console.WriteLine(abc.Address);
+//Console.WriteLine(abc.age);
 
 
-Person abc = new Person();
-Console.WriteLine(abc.PName);
+//Person haris = new Person("Haris","+92 3172021951","hfkjdshf sjdkfk",45);
+//Console.WriteLine(haris.PName);
+//Console.WriteLine(haris.CellNo);
+//Console.WriteLine(haris.Address);
+//Console.WriteLine(haris.age);
 
-abc.PName = "Farooq";
-abc.CellNo = "+92 315655656";
-abc.Address = "h no 123, block a, stree 1, karachi.";
-abc.age = 24;
-Console.WriteLine(abc.PName);
-Console.WriteLine(abc.CellNo);
-Console.WriteLine(abc.Address);
-Console.WriteLine(abc.age);
+//class Person
+//{
+//    public string PName, CellNo, Address;
+//    public int age;
+
+//    //constructor
+//    public Person()
+//    {
+//        this.PName = "Anonymous"; 
+//        this.CellNo = "Anonymous"; 
+//        this.Address = "Unknown"; 
+//        this.age = 100;
+//    }
+
+//    //constructor method(overloading)
+//    public Person(string name, string no, string add, int age)
+//    {
+//        this.PName = name;
+//        this.CellNo = no;
+//        this.Address = add;
+//        this.age = age;
+//    }
+
+//}
 
 
-Person haris = new Person("Haris","+92 3172021951","hfkjdshf sjdkfk",45);
-Console.WriteLine(haris.PName);
-Console.WriteLine(haris.CellNo);
-Console.WriteLine(haris.Address);
-Console.WriteLine(haris.age);
+// Coding Best Practices:
 
-class Person
+//Indentation (Readable by using new lines and spaces)
+//less Repeatation
+//Comments
+//Meaningful Variable Names
+//No errors
+
+
+//OOP (Objected Oriented Programming) approach || tariqa
+//it is used to make code readable & reusable
+
+
+// Main pillars of OOP
+
+//1. Inheritance
+
+//2. Polymorphism
+
+// Method Overloading add(0,2), add(1,2,3), add(4,5,6,7,8,9,10) 
+// Method Overriding 
+
+//3. Abstraction
+//4. Encapsulation
+
+// here we are creating a class
+//1. Inheritance
+//access modifiers
+
+
+
+//Vehicle accord = new Vehicle();
+//accord.run();
+
+
+Car camry = new Car("Toyota Camry","2024 LE","v8","320 kph");
+camry.run();
+camry.stop();
+
+//Parent Class (Base class)(Super Class)
+public class Vehicle
 {
-    public string PName, CellNo, Address;
-    public int age;
+    public string speed;
 
-    public Person()
+    public void run()
     {
-        this.PName = "Anonymous";
-        this.CellNo = "Anonymous";
-        this.Address = "Unknown";
-        this.age = 100;
-    }
-    public Person(string name, string no, string add, int age)
+        Console.WriteLine("the Vehicle started running.");
+    } 
+    public void run(string name)
     {
-        this.PName = name;
-        this.CellNo = no;
-        this.Address = add;
-        this.age = age;
+        Console.WriteLine($"the {name} started running.");
+    } 
+    public void stop()
+    {
+        Console.WriteLine("the Vehicle is stopped.");
     }
-
-
 }
 
+//Child Class (sub class)(Derived Class)
+//class Car extends Vehicle
+class Car: Vehicle
+{
+   public string name;
+   public string model;
+   public string power;
+
+    public Car(string name, string model, string power, string speed)
+    {
+        this.name = name;
+        this.model = model;
+        this.power = power;
+        this.speed = speed;
+    }
+
+    //Overriding run() and stop() methods here
+    public void run()
+    {   
+        //run funtion now prints the name and speed of car too.
+        Console.WriteLine($"{this.name} is running at {this.speed}");
+    }
+    public void stop()
+    {   
+        //stop funtion now prints the name and dift of car too when stopping.
+        Console.WriteLine($"the {this.name} is stopped with drift.");
+    }
+
+}
