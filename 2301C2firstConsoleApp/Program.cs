@@ -712,65 +712,199 @@ Mobiles.Clear(); //Empty list
 //3. Abstraction
 //4. Encapsulation
 
-// here we are creating a class
 //1. Inheritance
 //access modifiers
 
+
+//Single inheritance Vehicle -> Car
+//Multilevel Inheritance Vehicle -> Car -> ECar
+//Heirarchical inheritance Vehicle - >Car , Vehicle -> Bike , Vehicle ->truck
+//Multiple inheritance   
+//Hybrid inheritance  Vehicle - >Car , Car -> Ecar ,  Vehicle -> Car -> ECar( more than one type of inheritance)
 
 
 //Vehicle accord = new Vehicle();
 //accord.run();
 
 
-Car camry = new Car("Toyota Camry","2024 LE","v8","320 kph");
-camry.run();
-camry.stop();
+//Car camry = new Car("Toyota Camry","2024 LE","v8","320 kph");
+//camry.run();
+//camry.stop();
+
+//ECar tesla = new ECar("Tesla ", "2024 LE", "v6", "220 kph","800 KMS");
+//tesla.run();
+//tesla.stop();
+
+//Vehicle abc = new Vehicle();// Abstract class
+//Math abc = new Math();
+//abc.Sqrt(49);
+
+//Static 
+//Math.Sqrt(5);
+//Vehicle.raceStart();
+//Console.WriteLine(Vehicle.NoofLaps);
+
+
 
 //Parent Class (Base class)(Super Class)
-public class Vehicle
-{
-    public string speed;
+//abstract public class Vehicle
+//{
+//    public string speed;
+//    static public int NoofLaps=4;
 
-    public void run()
+//    public void run()
+//    {
+//        Console.WriteLine("the Vehicle started running.");
+//    }
+//    static public void raceStart()
+//    {
+//        Console.WriteLine("the Race has just begin . May the best be winner");
+//    } 
+//    public void run(string name)
+//    {
+//        Console.WriteLine($"the {name} started running.");
+//    } 
+//    public void stop()
+//    {
+//        Console.WriteLine("the Vehicle is stopped.");
+//    }
+//}
+
+////Child Class (sub class)(Derived Class)
+////class Car extends Vehicle
+//class Car: Vehicle
+//{
+//   public string name;
+//   public string model;
+//   public string power;
+
+//    public Car(string name, string model, string power, string speed)
+//    {
+//        this.name = name;
+//        this.model = model;
+//        this.power = power;
+//        this.speed = speed;
+//    }
+
+//    //Overriding run() and stop() methods here
+//    public void run()
+//    {   
+//        //run funtion now prints the name and speed of car too.
+//        Console.WriteLine($"{this.name} is running at {this.speed}");
+//    }
+//    public void stop()
+//    {   
+//        //stop funtion now prints the name and dift of car too when stopping.
+//        Console.WriteLine($"the {this.name} is stopped with drift.");
+//    }
+
+//}
+
+//// inheriting Cars class
+//class ECar : Car
+//{
+//    public string OneChargeDistance;
+
+
+//    public ECar(string name, string model, string power, string speed, string OneChargeDistance):base(name, model, power, speed)
+//    {
+//        this.OneChargeDistance = OneChargeDistance;
+
+//    }
+
+//    //Overriding run() and stop() methods here
+//    public void run()
+//    {
+//        //run funtion now prints the name and speed of car too.
+//        Console.WriteLine($"{this.name} is running at {this.speed} and it gives {this.OneChargeDistance} in one Charge.");
+//    }
+
+
+//}
+
+//InterFaces ()
+
+//FrontEndDevloper haris = new FrontEndDevloper();
+//haris.complexDesign();
+//haris.basicDesign();
+
+//BackEndDevloper Ebad = new BackEndDevloper();
+//Ebad.basicCrud();
+//Ebad.complexAPIs("Ebad");
+
+FullStackDeveloper haris = new FullStackDeveloper();
+haris.LearningSession();
+haris.basicDesign();
+haris.complexAPIs("Haris Naseer");
+
+
+interface FrontEndDevlopment
+{
+   void basicDesign();
+   void complexDesign();
+}
+
+
+interface BackEndDevelopment
+{
+    void basicCrud();
+    void complexAPIs(string devName);
+}
+
+public class FrontEndDevloper: FrontEndDevlopment
+{
+   public void basicDesign()
     {
-        Console.WriteLine("the Vehicle started running.");
-    } 
-    public void run(string name)
+        Console.WriteLine("WE will provide you a basicc design using html, Css and Bootstrap.");
+    }
+    public void complexDesign()
     {
-        Console.WriteLine($"the {name} started running.");
-    } 
-    public void stop()
-    {
-        Console.WriteLine("the Vehicle is stopped.");
+        Console.WriteLine("WE will provide you a Complex design using React or Vue or NextJS .");
     }
 }
 
-//Child Class (sub class)(Derived Class)
-//class Car extends Vehicle
-class Car: Vehicle
+
+
+
+public class BackEndDevloper: BackEndDevelopment
 {
-   public string name;
-   public string model;
-   public string power;
-
-    public Car(string name, string model, string power, string speed)
+   public void basicCrud()
     {
-        this.name = name;
-        this.model = model;
-        this.power = power;
-        this.speed = speed;
+        Console.WriteLine("WE will provide you basic CRUD Operations.");
+    }
+    public void complexAPIs(string devName)
+    {
+        Console.WriteLine($"{devName} will provide you  Complex APIs with authentication .");
+    }
+}
+
+
+//Multiple Inheritance
+public class FullStackDeveloper : FrontEndDevlopment, BackEndDevelopment
+{
+    public void basicDesign()
+    {
+        Console.WriteLine("WE will provide you a basicc design using html, Css and Bootstrap.");
+    }
+    public void complexDesign()
+    {
+        Console.WriteLine("WE will provide you a Complex design using React or Vue or NextJS .");
     }
 
-    //Overriding run() and stop() methods here
-    public void run()
-    {   
-        //run funtion now prints the name and speed of car too.
-        Console.WriteLine($"{this.name} is running at {this.speed}");
+    public void basicCrud()
+    {
+        Console.WriteLine("WE will provide you basic CRUD Operations.");
     }
-    public void stop()
-    {   
-        //stop funtion now prints the name and dift of car too when stopping.
-        Console.WriteLine($"the {this.name} is stopped with drift.");
+    public void complexAPIs(string devName)
+    {
+        Console.WriteLine($"{devName} will provide you  Complex APIs with authentication .");
     }
+    public void LearningSession()
+    {
+         Console.WriteLine($"Our Quality developer will provide you session.");
+    }
+
 
 }
+
+
