@@ -832,79 +832,147 @@ Mobiles.Clear(); //Empty list
 //Ebad.basicCrud();
 //Ebad.complexAPIs("Ebad");
 
-FullStackDeveloper haris = new FullStackDeveloper();
-haris.LearningSession();
-haris.basicDesign();
-haris.complexAPIs("Haris Naseer");
+//FullStackDeveloper haris = new FullStackDeveloper();
+//haris.LearningSession();
+//haris.basicDesign();
+//haris.complexAPIs("Haris Naseer");
 
 
-interface FrontEndDevlopment
+//interface FrontEndDevlopment
+//{
+//   void basicDesign();
+//   void complexDesign();
+//}
+
+
+//interface BackEndDevelopment
+//{
+//    void basicCrud();
+//    void complexAPIs(string devName);
+//}
+
+//public class FrontEndDevloper: FrontEndDevlopment
+//{
+//   public void basicDesign()
+//    {
+//        Console.WriteLine("WE will provide you a basicc design using html, Css and Bootstrap.");
+//    }
+//    public void complexDesign()
+//    {
+//        Console.WriteLine("WE will provide you a Complex design using React or Vue or NextJS .");
+//    }
+//}
+
+
+//public class BackEndDevloper: BackEndDevelopment
+//{
+//   public void basicCrud()
+//    {
+//        Console.WriteLine("WE will provide you basic CRUD Operations.");
+//    }
+//    public void complexAPIs(string devName)
+//    {
+//        Console.WriteLine($"{devName} will provide you  Complex APIs with authentication .");
+//    }
+//}
+
+
+////Multiple Inheritance
+//public class FullStackDeveloper : FrontEndDevlopment, BackEndDevelopment
+//{
+//    public void basicDesign()
+//    {
+//        Console.WriteLine("WE will provide you a basic design using html, Css and Bootstrap.");
+//    }
+//    public void complexDesign()
+//    {
+//        Console.WriteLine("WE will provide you a Complex design using React or Vue or NextJS .");
+//    }
+
+//    public void basicCrud()
+//    {
+//        Console.WriteLine("WE will provide you basic CRUD Operations.");
+//    }
+//    public void complexAPIs(string devName)
+//    {
+//        Console.WriteLine($"{devName} will provide you  Complex APIs with authentication .");
+//    }
+//    public void LearningSession()
+//    {
+//         Console.WriteLine($"Our Quality developer will provide you session.");
+//    }
+
+
+//}
+
+//Abstraction
+
+// Facebook user, admin panel, 
+
+
+
+//Encapsulation
+
+//
+
+
+
+//Access Modifiers
+
+//1. public : any one can access.
+
+//2. private : only owner class can access.
+
+//3. protected : only owner class and child class can access
+
+
+Watch citizen = new Watch("CZ123", 5600, "Titanium Black");
+Console.WriteLine(citizen.model);
+//Console.WriteLine(citizen.price);
+//Console.WriteLine(citizen.color);
+citizen.ShowPrice();
+citizen.ShowColor();
+
+SmartWatch appleWatch = new SmartWatch("series 9",45000,"Silver",true);
+appleWatch.showWatch();
+
+
+public class Watch
 {
-   void basicDesign();
-   void complexDesign();
+    public string? model;
+    private int price;
+    protected string? color;
+
+    public Watch(string model, int price , string color)
+    {
+        this.model = model;
+        this.price = price;
+        this.color = color;
+    }  
+    public void ShowPrice()
+    {
+        Console.WriteLine(this.price);
+    } public void ShowColor()
+    {
+        Console.WriteLine(this.color);
+    }
+
 }
 
 
-interface BackEndDevelopment
+public class SmartWatch : Watch
 {
-    void basicCrud();
-    void complexAPIs(string devName);
-}
-
-public class FrontEndDevloper: FrontEndDevlopment
-{
-   public void basicDesign()
+    public bool canCall;
+    public SmartWatch(string model, int price, string color, bool canCall):base(model, price, color)
     {
-        Console.WriteLine("WE will provide you a basicc design using html, Css and Bootstrap.");
+        this.canCall = canCall;
     }
-    public void complexDesign()
+    public void showWatch()
     {
-        Console.WriteLine("WE will provide you a Complex design using React or Vue or NextJS .");
-    }
-}
-
-
-
-
-public class BackEndDevloper: BackEndDevelopment
-{
-   public void basicCrud()
-    {
-        Console.WriteLine("WE will provide you basic CRUD Operations.");
-    }
-    public void complexAPIs(string devName)
-    {
-        Console.WriteLine($"{devName} will provide you  Complex APIs with authentication .");
+        Console.WriteLine(this.model);
+        // Console.WriteLine(this.price);// cant access a private property in child class
+        this.ShowPrice();
+        Console.WriteLine(this.color);// can access a protected property in child class
+        Console.WriteLine(this.canCall);
     }
 }
-
-
-//Multiple Inheritance
-public class FullStackDeveloper : FrontEndDevlopment, BackEndDevelopment
-{
-    public void basicDesign()
-    {
-        Console.WriteLine("WE will provide you a basicc design using html, Css and Bootstrap.");
-    }
-    public void complexDesign()
-    {
-        Console.WriteLine("WE will provide you a Complex design using React or Vue or NextJS .");
-    }
-
-    public void basicCrud()
-    {
-        Console.WriteLine("WE will provide you basic CRUD Operations.");
-    }
-    public void complexAPIs(string devName)
-    {
-        Console.WriteLine($"{devName} will provide you  Complex APIs with authentication .");
-    }
-    public void LearningSession()
-    {
-         Console.WriteLine($"Our Quality developer will provide you session.");
-    }
-
-
-}
-
-
