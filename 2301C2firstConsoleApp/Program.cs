@@ -926,53 +926,148 @@ Mobiles.Clear(); //Empty list
 //3. protected : only owner class and child class can access
 
 
-Watch citizen = new Watch("CZ123", 5600, "Titanium Black");
-Console.WriteLine(citizen.model);
-//Console.WriteLine(citizen.price);
-//Console.WriteLine(citizen.color);
-citizen.ShowPrice();
-citizen.ShowColor();
+//Watch citizen = new Watch("CZ123", 5600, "Titanium Black");
+//Console.WriteLine(citizen.model);
+////Console.WriteLine(citizen.price);
+////Console.WriteLine(citizen.color);
+//citizen.ShowPrice();
+//citizen.ShowColor();
 
-SmartWatch appleWatch = new SmartWatch("series 9",45000,"Silver",true);
-appleWatch.showWatch();
+//SmartWatch appleWatch = new SmartWatch("series 9",45000,"Silver",true);
+//appleWatch.showWatch();
 
 
-public class Watch
+//public class Watch
+//{
+//    public string? model;
+//    private int price;
+//    protected string? color;
+
+//    public Watch(string model, int price , string color)
+//    {
+//        this.model = model;
+//        this.price = price;
+//        this.color = color;
+//    }  
+//    public void ShowPrice()
+//    {
+//        Console.WriteLine(this.price);
+//    } public void ShowColor()
+//    {
+//        Console.WriteLine(this.color);
+//    }
+
+//}
+
+//public class SmartWatch : Watch
+//{
+//    public bool canCall;
+//    public SmartWatch(string model, int price, string color, bool canCall):base(model, price, color)
+//    {
+//        this.canCall = canCall;
+//    }
+//    public void showWatch()
+//    {
+//        Console.WriteLine(this.model);
+//        // Console.WriteLine(this.price);// cant access a private property in child class
+//        this.ShowPrice();
+//        Console.WriteLine(this.color);// can access a protected property in child class
+//        Console.WriteLine(this.canCall);
+//    }
+//}
+
+
+//Ternary Operator
+//string check = (Condtion)? firstValue : SecondValue
+
+//int check = (98 >= 56) ? 7 : 9;// if-else
+//Console.WriteLine(check);
+
+// Delegates
+
+//Maths.Calculate Evaluate;
+
+//Evaluate = Maths.Add;
+//Evaluate(45,5.2);
+
+//Evaluate = Maths.Multiply;
+//Evaluate(50,5);
+
+//Evaluate = Maths.Divide;
+
+//Evaluate(50,0);
+
+//Evaluate = Maths.Sub;
+
+//Evaluate(50,4);
+////Evaluate = Maths.PercentageCalculator;
+
+//Maths.PercentageCalculator(45, 78, 49, 300);
+
+
+//public class Maths
+//{
+//    public delegate void Calculate(double num1, double num2);
+
+//    public static void Add(double num1, double num2)
+//    {
+//        Console.WriteLine(num1+num2);
+//    }
+
+//    public static void Sub(double num1, double num2)
+//    {
+//        Console.WriteLine(num1-num2);
+//    }
+//    public static void Multiply(double num1, double num2)
+//    {
+//        Console.WriteLine(num1*num2);
+//    } 
+//    public static void Divide(double num1, double num2)
+//    {
+//        if(num2 != 0)
+//        {
+//    Console.WriteLine(num1/num2);
+//        }
+//        else
+//        {
+//            Console.WriteLine("Can't divide by zero");
+//        }
+//    }
+//    public static void PercentageCalculator(double num1, double num2, double num3,double  total)
+//    {
+//        double per= (num1+num2+ num3)/total*100;
+//        Console.WriteLine(per);
+//    }
+//}
+
+Office.Hiring employee;
+
+employee = Office.AcademicsDepart;
+employee("Haris Naseer", 788888, "haris@gmail.com");
+
+employee = Office.SalesDepart;
+employee("Umair Tariq", 650000, "umairtariq@gmail.com");
+
+
+public class Office
 {
-    public string? model;
-    private int price;
-    protected string? color;
+    public delegate void Hiring(string name, int salary, string email);
 
-    public Watch(string model, int price , string color)
+    public static void AcademicsDepart(string name, int salary, string email)
     {
-        this.model = model;
-        this.price = price;
-        this.color = color;
-    }  
-    public void ShowPrice()
+        Console.WriteLine($"{name} is hired in Academic Department at {salary} PKR. He can be contacted at {email}");
+    } 
+    public static void AccountDepart(string name, int salary, string email)
     {
-        Console.WriteLine(this.price);
-    } public void ShowColor()
+        Console.WriteLine($"{name} is hired in Accounts Department at {salary} PKR. He can be contacted at {email}");
+    }
+    public static void SalesDepart(string name, int salary, string email)
     {
-        Console.WriteLine(this.color);
+        Console.WriteLine($"{name} is hired in Sales Department at {salary} PKR. He can be contacted at {email}");
+    } 
+    public static void HRDepart(string name, int salary, string email)
+    {
+        Console.WriteLine($"{name} is hired in Sales Department at {salary} PKR. He can be contacted at {email}");
     }
 
-}
-
-
-public class SmartWatch : Watch
-{
-    public bool canCall;
-    public SmartWatch(string model, int price, string color, bool canCall):base(model, price, color)
-    {
-        this.canCall = canCall;
-    }
-    public void showWatch()
-    {
-        Console.WriteLine(this.model);
-        // Console.WriteLine(this.price);// cant access a private property in child class
-        this.ShowPrice();
-        Console.WriteLine(this.color);// can access a protected property in child class
-        Console.WriteLine(this.canCall);
-    }
 }
