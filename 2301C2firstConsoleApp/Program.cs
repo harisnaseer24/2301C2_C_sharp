@@ -991,16 +991,16 @@ Mobiles.Clear(); //Empty list
 //Evaluate(45,5.2);
 
 //Evaluate = Maths.Multiply;
-//Evaluate(50,5);
+//Evaluate(50, 5);
 
 //Evaluate = Maths.Divide;
 
-//Evaluate(50,0);
+//Evaluate(50, 0);
 
-//Evaluate = Maths.Sub;
+////Evaluate = Maths.Sub;
 
-//Evaluate(50,4);
-////Evaluate = Maths.PercentageCalculator;
+////Evaluate(50,4);
+//////Evaluate = Maths.PercentageCalculator;
 
 //Maths.PercentageCalculator(45, 78, 49, 300);
 
@@ -1011,63 +1011,129 @@ Mobiles.Clear(); //Empty list
 
 //    public static void Add(double num1, double num2)
 //    {
-//        Console.WriteLine(num1+num2);
+//        Console.WriteLine(num1 + num2);
 //    }
 
 //    public static void Sub(double num1, double num2)
 //    {
-//        Console.WriteLine(num1-num2);
+//        Console.WriteLine(num1 - num2);
 //    }
 //    public static void Multiply(double num1, double num2)
 //    {
-//        Console.WriteLine(num1*num2);
-//    } 
+//        Console.WriteLine(num1 * num2);
+//    }
 //    public static void Divide(double num1, double num2)
 //    {
-//        if(num2 != 0)
+//        if (num2 != 0)
 //        {
-//    Console.WriteLine(num1/num2);
+//            Console.WriteLine(num1 / num2);
 //        }
 //        else
 //        {
 //            Console.WriteLine("Can't divide by zero");
 //        }
 //    }
-//    public static void PercentageCalculator(double num1, double num2, double num3,double  total)
+//    public static void PercentageCalculator(double num1, double num2, double num3, double total)
 //    {
-//        double per= (num1+num2+ num3)/total*100;
+//        double per = (num1 + num2 + num3) / total * 100;
 //        Console.WriteLine(per);
 //    }
 //}
 
-Office.Hiring employee;
+//Office.Hiring employee;
 
-employee = Office.AcademicsDepart;
-employee("Haris Naseer", 788888, "haris@gmail.com");
+//employee = Office.AcademicsDepart;
+//employee("Haris Naseer", 788888, "haris@gmail.com");
 
-employee = Office.SalesDepart;
-employee("Umair Tariq", 650000, "umairtariq@gmail.com");
+//employee = Office.SalesDepart;
+//employee("Umair Tariq", 650000, "umairtariq@gmail.com");
+
+//employee = Office.HRDepart;
+//employee("Umair Tariq", 650000, "umairtariq@gmail.com");
+
+//Office.HRDepart("Yahya", 50000);
+
+//public class Office
+//{
+//    public delegate void Hiring(string name, int salary, string email);
+
+//    public static void AcademicsDepart(string name, int salary, string email)
+//    {
+//        Console.WriteLine($"{name} is hired in Academic Department at {salary} PKR. He can be contacted at {email}");
+//    }
+//    public static void AccountDepart(string name, int salary, string email)
+//    {
+//        Console.WriteLine($"{name} is hired in Accounts Department at {salary} PKR. He can be contacted at {email}");
+//    }
+//    public static void SalesDepart(string name, int salary, string email)
+//    {
+//        Console.WriteLine($"{name} is hired in Sales Department at {salary} PKR. He can be contacted at {email}");
+//    }
+//    public static void HRDepart(string name, int salary)
+//    {
+//        Console.WriteLine($"{name} is hired in Sales Department at {salary} PKR. ");
+//    }
+
+//}
 
 
-public class Office
+//getter and setter (encapsulation)
+//Burger majestic = new Burger("The Majestic", 730);
+//Console.WriteLine(majestic.name);
+//Console.WriteLine(majestic.Price);
+
+
+//Burger Doppler = new Burger("The Doppler", 2730);
+//Console.WriteLine(Doppler.name);
+//Console.WriteLine(Doppler.Price);
+
+
+//public class Burger
+//{
+//    public string name;
+//    private int price;
+//   // public int Price { get; set; }//auto complete properties
+
+//    public int Price
+//    {
+//        get { return price; }
+//        set { 
+//            if(value <= 2000)
+//            {
+//            price = value;
+//            }
+//            else
+//            {
+//                price = 2000;
+//            }
+           
+        
+        
+//        }
+//    }
+
+//    public Burger(string name, int price)
+//    {
+//        this.name = name;
+//        this.Price = price;
+//    }
+//}
+
+//auto complete properties
+
+//enums (collection of constant integers);
+
+//Implicit (small to big)
+//Explicit (big to small)
+
+Console.WriteLine(Players.fakhar+ " has "+ (int)Players.fakhar+ " jersey number");
+
+enum Players
 {
-    public delegate void Hiring(string name, int salary, string email);
-
-    public static void AcademicsDepart(string name, int salary, string email)
-    {
-        Console.WriteLine($"{name} is hired in Academic Department at {salary} PKR. He can be contacted at {email}");
-    } 
-    public static void AccountDepart(string name, int salary, string email)
-    {
-        Console.WriteLine($"{name} is hired in Accounts Department at {salary} PKR. He can be contacted at {email}");
-    }
-    public static void SalesDepart(string name, int salary, string email)
-    {
-        Console.WriteLine($"{name} is hired in Sales Department at {salary} PKR. He can be contacted at {email}");
-    } 
-    public static void HRDepart(string name, int salary, string email)
-    {
-        Console.WriteLine($"{name} is hired in Sales Department at {salary} PKR. He can be contacted at {email}");
-    }
-
+    saim =43,
+    babar =56,
+    rizwan =100,
+    fakhar= 78,
+    amir= 5
+    
 }
