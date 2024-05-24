@@ -1106,9 +1106,7 @@ Mobiles.Clear(); //Empty list
 //            {
 //                price = 2000;
 //            }
-           
-        
-        
+
 //        }
 //    }
 
@@ -1126,14 +1124,125 @@ Mobiles.Clear(); //Empty list
 //Implicit (small to big)
 //Explicit (big to small)
 
-Console.WriteLine(Players.fakhar+ " has "+ (int)Players.fakhar+ " jersey number");
+//Console.WriteLine(Players.fakhar+ " has "+ (int)Players.fakhar+ " jersey number");
 
-enum Players
+//enum Players
+//{
+//    saim =43,
+//    babar =56,
+//    rizwan =100,
+//    fakhar= 78,
+//    amir= 5,
+
+//}
+
+
+//LINQ (Language Integerated Query)
+//Ienumerable (foreach)
+//Iqueryable (database like queries can be implemented)
+
+//Lambda Expression (Arrow Function) e => e.id
+
+Employee emp1 = new Employee(1,"Murtaza","Web Developer",50000,32,"Web");
+Employee emp2 = new Employee(2,"Arham","Web Designer",45000,43,"Web");
+Employee emp3 = new Employee(3,"Noman","Content Creator",47000,45,"Media");
+Employee emp4 = new Employee(4,"Furqan","Team Lead",70000,53,"Web");
+Employee emp5 = new Employee(5,"Adeel","Sales Executive",60000,42,"Sales");
+
+Employee emp6 = new Employee(6, "Muzammil", "Seo & Marketing officer",57000,46,"Marketing");
+
+List<Employee> employees = new List<Employee>();
+employees.Add(emp1);
+employees.Add(emp2);
+employees.Add(emp3);
+employees.Add(emp4);
+employees.Add(emp5);
+employees.Add(emp6);
+
+
+//1 ForEach
+//employees.ForEach(emp => Console.WriteLine("id : {0}, name : {1}, designation : {2}, salary : {3} , age : {4}, department : {5} ", emp.id, emp.name, emp.designation, emp.salary, emp.age, emp.depart));
+
+//2 OrderBy
+//employees = employees.OrderBy(emp=> emp.name).ToList();
+
+//employees = employees.OrderBy(emp => emp.name).ThenBy(emp => emp.depart).ToList();
+//employees = employees.OrderByDescending(emp => emp.name).ThenByDescending(emp => emp.depart).ToList();
+
+//3 Select
+IEnumerable<string> names = employees.Select(emp => emp.name);
+foreach (var name in names) { Console.WriteLine(name); }
+
+//Console.WriteLine();
+
+//4 Where 
+//employees = employees.Where(emp => emp.age >35 && emp.salary <=56000).ToList();
+
+//employees = employees.Where(emp => emp.age > 35 || emp.salary != 57000).ToList();
+
+
+//5 Skip and Take
+//employees = employees.Where(emp => emp.age > 35 || emp.salary != 57000).Skip(3).ToList();
+
+//employees = employees.Where(emp => emp.age > 35 || emp.salary != 57000).Take(3).ToList();
+//employees = employees.Where(emp => emp.age > 35 || emp.salary != 57000).Skip(2).Take(3).ToList();
+
+
+// First , Last , Single , FirstOrDefault, LastOrDefault
+
+//Employee first = employees.First(t => t.depart =="Web");
+//Employee last = employees.Last(t => t.depart =="Web");
+
+//Employee single = employees.Single(t => t.salary == 60000);
+
+
+//Console.WriteLine(single.name);
+
+
+//Aggregate Methods
+
+Console.WriteLine(employees.Count());
+
+Console.WriteLine(employees.Min(emp => emp.salary));//returns a min value
+
+Employee minSalPerson = employees.MinBy(emp => emp.salary);
+Console.WriteLine(minSalPerson.name+" gets "+ minSalPerson.salary);//returns  min value Object
+
+
+
+
+foreach (Employee emp in employees)
 {
-    saim =43,
-    babar =56,
-    rizwan =100,
-    fakhar= 78,
-    amir= 5
-    
+    Console.WriteLine("id : {0}, name : {1}, designation : {2}, salary : {3} , age : {4}, department : {5} ", emp.id, emp.name, emp.designation, emp.salary, emp.age, emp.depart);
 }
+
+
+public class Employee
+{
+    public int id { get; set; }
+    public string name { get; set; }
+    public int salary { get; set; }
+    public string designation { get; set; }
+    public string depart { get; set; }
+    public int age { get; set; }
+
+    public Employee(int id, string name, string designation, int salary, int age , string depart) { 
+    
+
+        this.id = id;
+        this.name = name;   
+        this.designation = designation;
+        this.salary = salary;
+        this.age = age;
+        this.depart = depart;
+    }
+
+
+}
+
+//Task
+//1.Order the list in ascending order by name and then by descending order by id
+//2. Get employees which are getting salary more than or equal to 60000 at the age of less than 33 years.
+//3. Get data of first four employees skipping 
+//4. get Maximum salary we are paying and also get the object.
+//5. Get last employees whose salary is below 50000.
