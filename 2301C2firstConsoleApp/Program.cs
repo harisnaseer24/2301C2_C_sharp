@@ -1143,21 +1143,21 @@ Mobiles.Clear(); //Empty list
 
 //Lambda Expression (Arrow Function) e => e.id
 
-Employee emp1 = new Employee(1,"Murtaza","Web Developer",50000,32,"Web");
-Employee emp2 = new Employee(2,"Arham","Web Designer",45000,43,"Web");
-Employee emp3 = new Employee(3,"Noman","Content Creator",47000,45,"Media");
-Employee emp4 = new Employee(4,"Furqan","Team Lead",70000,53,"Web");
-Employee emp5 = new Employee(5,"Adeel","Sales Executive",60000,42,"Sales");
+//Employee emp1 = new Employee(1,"Murtaza","Web Developer",50000,32,"Web");
+//Employee emp2 = new Employee(2,"Arham","Web Designer",45000,43,"Web");
+//Employee emp3 = new Employee(3,"Noman","Content Creator",47000,45,"Media");
+//Employee emp4 = new Employee(4,"Furqan","Team Lead",70000,53,"Web");
+//Employee emp5 = new Employee(5,"Adeel","Sales Executive",60000,42,"Sales");
 
-Employee emp6 = new Employee(6, "Muzammil", "Seo & Marketing officer",57000,46,"Marketing");
+//Employee emp6 = new Employee(6, "Muzammil", "Seo & Marketing officer",57000,46,"Marketing");
 
-List<Employee> employees = new List<Employee>();
-employees.Add(emp1);
-employees.Add(emp2);
-employees.Add(emp3);
-employees.Add(emp4);
-employees.Add(emp5);
-employees.Add(emp6);
+//List<Employee> employees = new List<Employee>();
+//employees.Add(emp1);
+//employees.Add(emp2);
+//employees.Add(emp3);
+//employees.Add(emp4);
+//employees.Add(emp5);
+//employees.Add(emp6);
 
 
 //1 ForEach
@@ -1170,8 +1170,8 @@ employees.Add(emp6);
 //employees = employees.OrderByDescending(emp => emp.name).ThenByDescending(emp => emp.depart).ToList();
 
 //3 Select
-IEnumerable<string> names = employees.Select(emp => emp.name);
-foreach (var name in names) { Console.WriteLine(name); }
+//IEnumerable<string> names = employees.Select(emp => emp.name);
+//foreach (var name in names) { Console.WriteLine(name); }
 
 //Console.WriteLine();
 
@@ -1201,44 +1201,44 @@ foreach (var name in names) { Console.WriteLine(name); }
 
 //Aggregate Methods
 
-Console.WriteLine(employees.Count());
+//Console.WriteLine(employees.Count());
 
-Console.WriteLine(employees.Min(emp => emp.salary));//returns a min value
+//Console.WriteLine(employees.Min(emp => emp.salary));//returns a min value
 
-Employee minSalPerson = employees.MinBy(emp => emp.salary);
-Console.WriteLine(minSalPerson.name+" gets "+ minSalPerson.salary);//returns  min value Object
-
-
+//Employee minSalPerson = employees.MinBy(emp => emp.salary);
+//Console.WriteLine(minSalPerson.name+" gets "+ minSalPerson.salary);//returns  min value Object
 
 
-foreach (Employee emp in employees)
-{
-    Console.WriteLine("id : {0}, name : {1}, designation : {2}, salary : {3} , age : {4}, department : {5} ", emp.id, emp.name, emp.designation, emp.salary, emp.age, emp.depart);
-}
 
 
-public class Employee
-{
-    public int id { get; set; }
-    public string name { get; set; }
-    public int salary { get; set; }
-    public string designation { get; set; }
-    public string depart { get; set; }
-    public int age { get; set; }
-
-    public Employee(int id, string name, string designation, int salary, int age , string depart) { 
-    
-
-        this.id = id;
-        this.name = name;   
-        this.designation = designation;
-        this.salary = salary;
-        this.age = age;
-        this.depart = depart;
-    }
+//foreach (Employee emp in employees)
+//{
+//    Console.WriteLine("id : {0}, name : {1}, designation : {2}, salary : {3} , age : {4}, department : {5} ", emp.id, emp.name, emp.designation, emp.salary, emp.age, emp.depart);
+//}
 
 
-}
+//public class Employee
+//{
+//    public int id { get; set; }
+//    public string name { get; set; }
+//    public int salary { get; set; }
+//    public string designation { get; set; }
+//    public string depart { get; set; }
+//    public int age { get; set; }
+
+//    public Employee(int id, string name, string designation, int salary, int age , string depart) { 
+
+
+//        this.id = id;
+//        this.name = name;   
+//        this.designation = designation;
+//        this.salary = salary;
+//        this.age = age;
+//        this.depart = depart;
+//    }
+
+
+//}
 
 //Task
 //1.Order the list in ascending order by name and then by descending order by id
@@ -1246,3 +1246,92 @@ public class Employee
 //3. Get data of first four employees skipping 
 //4. get Maximum salary we are paying and also get the object.
 //5. Get last employees whose salary is below 50000.
+
+//records , indexers, namespaces
+
+
+
+//Person a = new Person();
+//a.name = "Haris";
+//a.age = 24;
+
+//Person aa = new Person();
+//aa.name = "Haris";
+//aa.age = 24;
+
+//Console.WriteLine(a == aa);
+
+
+
+//creating object of record class
+//Person2 b = new Person2();
+//b.name = "Haris Naseer";
+//b.age = 24;
+
+//Person2 bb = new Person2();
+//bb.name = "Haris";
+//bb.age = 24;
+
+//Console.WriteLine(b);
+//Console.WriteLine(b == bb);
+//public class Person
+//{
+//    public string? name { get; set; }
+//    public int? age { get; set; }
+//}
+
+//public record Person2
+//{
+//    public string? name { get; set; }
+//    public int? age { get; set; }
+//}
+
+
+//Indexers - if we want our object to behave like an array we apply indexers.
+
+//SuperHeroes fav3 = new SuperHeroes();
+//fav3[0] = "Iron Man";
+//fav3[1] = "Hulk";
+//fav3[2] = "Super Man";
+
+
+//Console.WriteLine(fav3[1]);
+
+
+//public class SuperHeroes
+//{
+//    public string[] superNames = new string[3];
+
+//    public string this[int i]
+//    {
+//        get { return superNames[i]; }
+//        set
+//        {
+//            superNames[i] = value;
+//        }
+
+//    }
+
+//}
+
+//namespaces (collection of related classes)
+
+//using System;
+//using System.Collections;
+
+using _2301C2firstConsoleApp;
+
+//tooltax
+Vehicle toyota = new Vehicle()
+{
+    name = "Toyota corolla",
+    regno = 2,
+};
+
+tooltax a = new tooltax()
+{
+    amount = 5,
+    isPaid = false
+};
+
+Console.WriteLine(a.isPaid);
