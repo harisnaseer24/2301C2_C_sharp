@@ -983,7 +983,7 @@ Mobiles.Clear(); //Empty list
 //int check = (98 >= 56) ? 7 : 9;// if-else
 //Console.WriteLine(check);
 
-// Delegates
+//Multicast Delegates
 
 //Maths.Calculate Evaluate;
 
@@ -1319,19 +1319,49 @@ Mobiles.Clear(); //Empty list
 //using System;
 //using System.Collections;
 
-using _2301C2firstConsoleApp;
+//using _2301C2firstConsoleApp;
 
-//tooltax
-Vehicle toyota = new Vehicle()
+////tooltax
+//Vehicle toyota = new Vehicle()
+//{
+//    name = "Toyota corolla",
+//    regno = 2,
+//};
+
+//tooltax a = new tooltax()
+//{
+//    amount = 5,
+//    isPaid = false
+//};
+
+//Console.WriteLine(a.isPaid);
+
+//events
+MyCar civic = new MyCar();
+civic.speedUp += new MyCar.speedCar(MyCar.carMoved);
+civic.drive();
+
+public class MyCar
 {
-    name = "Toyota corolla",
-    regno = 2,
-};
+    public delegate void speedCar();
+    public event speedCar speedUp;
+    public int speed = 0;
 
-tooltax a = new tooltax()
-{
-    amount = 5,
-    isPaid = false
-};
+    public void drive()
+    {
+        for(int i= 0; i<20; i++)
+        {
+            if (i >= 15)
+             speedUp();
+            Console.WriteLine("Car is moving at "+i +" mph");
+            System.Threading.Thread.Sleep(1000);
+        }
+   
+    }
+    public static void carMoved()
+    {
+        Console.WriteLine("The car speed limit is exceeded");
+    }
+}
 
-Console.WriteLine(a.isPaid);
+//Create a class Game having delegate gamemethod and event boost.It has 2 methods play and levelup. When play method is called, user is asked to enter name. It user enters "Haris" event boost should be fired and level up method is called.
